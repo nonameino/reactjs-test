@@ -23,6 +23,7 @@ export default class Icon extends React.Component<IconProps,IconState> {
     render() {
         return (
             <div className='icon-container' onMouseLeave={this.toggleHover} onMouseEnter={this.toggleHover}>
+                <div />
                 <img src={this.state.hover ? this.props.hover : this.props.src} alt='icon' />
             </div>
         );

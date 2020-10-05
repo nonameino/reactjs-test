@@ -35,6 +35,7 @@ export default class Hamburger extends React.Component<HamburgerProps,HamburgerS
                 alignItems: 'center',
                 cursor: 'pointer',
                 padding: '4px',
+                marginRight: '15px',
             },
             line: {
                 height: '2px',

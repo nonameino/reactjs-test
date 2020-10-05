@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      {/* <StickyTop /> */}
+      <StickyTop />
       <HotSpotBanner />
       <p>..</p>
       <p>..</p>

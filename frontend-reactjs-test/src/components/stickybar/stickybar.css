@@ -2,6 +2,7 @@
     /* position: relative; */
     top: 0;
     background-color: #2699FB;
+    /* padding-right: 15px; */
 }
 
 .sticky-bar-bottom-container {
@@ -11,6 +12,8 @@
     justify-content: flex-end;
     align-items: flex-end;
     width: 100%;
+    padding-right: 15px;
+    padding-bottom: 10px;
 }
 
 .sticky-bar-top {
@@ -29,8 +32,11 @@
 }
 
 .icon-container:hover {
-    border-radius: 50%;
-    border: 5px #CCCCCC solid;
+    /* border-radius: 50%; */
+    /* border: 5px #CCCCCC solid; */
+    /* outline: #CCCCCC solid 5px; */
+    /* shape-outside: circle(); */
+    background-color: #DDD;
 }
 
 /* .icon-container:hover .icon {
@@ -43,11 +49,24 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 33px;
-    height: 33px;
-    background-color: white;
+    width: 38px;
+    height: 38px;
+    /* margin: 5px; */
+    /* border: 5px #CCCCCC; */
+    /* outline: #CCCCCC solid; */
+    /* background-color: white; */
+    border-radius: 50%;
+    /* shape-outside: circle(50%); */
 }
 
-.icon {
-    position: relative;
+.icon-container div {
+    /* position: relative; */
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.icon-container img {
+    position: absolute;
 }

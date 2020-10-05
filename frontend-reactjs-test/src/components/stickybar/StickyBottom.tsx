@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../icons/Icon';
+import Icon from '../Icon';
 
 import ShareImg from '../../data/share_1.png';
 import MailImg from './../../data/mail_1.png';
