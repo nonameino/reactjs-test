@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'react-bootstrap';
 import logo from './../../data/Gameloft_Logo_Flat_White_Line-01.png'
-import Hamburger from './../nav/Hamburger';
+import Hamburger from './Hamburger';
 import './stickybar.css'
 
 const StickyTop = ()=>{
