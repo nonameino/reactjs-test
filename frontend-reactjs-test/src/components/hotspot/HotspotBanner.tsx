@@ -42,7 +42,7 @@ export default class HotSpotBanner extends React.Component<{},HotspotState> {
 
         const stars = [0,0,0,0,0]
                         .map((value, index)=>index<this.state.rateValue ? 1 : 0)
-                        .map(value=><img src={value == 1 ? starFullImg : starImg} alt='rate-star' />);
+                        .map(value=><img src={value === 1 ? starFullImg : starImg} alt='rate-star' />);
 
 
         return (
