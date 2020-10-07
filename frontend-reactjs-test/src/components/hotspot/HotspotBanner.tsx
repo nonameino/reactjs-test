@@ -59,7 +59,7 @@ export default class HotSpotBanner extends React.Component<{},HotspotState> {
                     <p className="game-description">{this.state.decription}</p>
                 </div>
                 <div className='hotspot-market-container' >
-                    <h4>Download lastest version</h4>
+                    <h4 style={{color:'#2699FB'}}>Download lastest version</h4>
                     <div className='market-buttons-container'>
                         <img src={btnNitendoIng} alt='btnNitendo' />
                         <img src={btnMicrosoftIng} alt='btnMicrosoft' />

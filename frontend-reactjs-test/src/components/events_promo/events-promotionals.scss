@@ -1,0 +1,21 @@
+@import './../../global.scss';
+
+.events-promotionals {
+    width: 100vw;
+    height: 100vh;
+    background-color: #D8EDFF;
+    color: #2699FB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    div {
+        width: 1028px;
+        h1 {
+            font-size: $font-size-large;
+        };
+        p {
+            font-size: $font-size-normal;
+        };
+    }
+}
