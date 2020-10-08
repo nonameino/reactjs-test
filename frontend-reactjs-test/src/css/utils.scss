@@ -1,0 +1,66 @@
+$font-size-large: 45px;
+$font-size-m-large: 35px;
+$font-size-s-large: 30px;
+$font-size-normal: 25px;
+$font-size-m-normal: 20px;
+$font-size-s-normal: 17px;
+$font-size-small: 15px;
+$font-size-m-small: 11px;
+$font-size-s-small: 10px;
+
+.full-view {
+    width: 100vw;
+    height: 100vh;
+}
+
+.full-view-width {
+    width: 100vw;
+};
+
+.full-view-height {
+    height: 100vh;
+}
+
+.full-viewport {
+    width: 100%;
+    height: 100vh;
+}
+
+.full-parent {
+    width: 100%;
+    height: 100%;
+}
+
+.full-parent-width {
+    width: 100%;
+}
+
+.full-parent-height {
+    height: 100%;
+}
+
+.-text-blue {
+    color: #2699FB;
+}
+
+.-text-white {
+    color: white
+}
+
+.view-title-text {
+    font-size: $font-size-large;
+}
+
+.view-container {
+    display: flex;
+    justify-content: center;
+}
+
+.view-content-container {
+    width: 100%;
+    max-width: 1028px;
+}
+
+// .view-content-max-width {
+//     max-width: 1028px;
+// }

@@ -1,0 +1,41 @@
+@import './utils.scss';
+.view-banner {
+    height: 100%;
+    align-items: flex-end;
+};
+
+.view-banner-container {
+    width: 599px;
+    min-width: inherit;
+    margin-bottom: 25px;
+};
+
+.view-banner-rate-text {
+    font-size: $font-size-m-small;
+};
+
+.view-banner-details-text {
+    font-size: $font-size-m-normal;
+};
+
+.view-market {
+    background-color: #D8EDFF;
+}
+
+.download-text {
+    font-size: $font-size-m-normal;
+}
+
+.view-market-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.market-group {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
