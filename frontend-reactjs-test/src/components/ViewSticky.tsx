@@ -1,8 +1,8 @@
 import React from 'react';
 import './../css/view-sticky.scss';
 
-import Icon from './Icon';
-import Hamburger from './stickybar/Hamburger';
+import Icon from './subcomponents/Icon';
+import Hamburger from './subcomponents/Hamburger';
 
 import logo from './../data/Gameloft_Logo_Flat_White_Line-01.png'
 import ShareImg from '../data/share_1.png';
@@ -31,9 +31,9 @@ export class ViewStickyBottom extends React.Component {
         return (
             <div className='full-parent-width sticky -bottom'>
                 <div className='sticky-bottom-container'>
-                    <Icon src={ShareImg} hover={ShareImgHover}/>
-                    <Icon src={MailImg} hover={MailImgHover}/>
-                    <Icon src={SupportImg} hover={SupportImgHover}/>
+                    <Icon src={ShareImg} hoverSrc={ShareImgHover}/>
+                    <Icon src={MailImg} hoverSrc={MailImgHover}/>
+                    <Icon src={SupportImg} hoverSrc={SupportImgHover}/>
                 </div>
             </div>
         );

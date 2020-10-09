@@ -1,10 +1,10 @@
 import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './events-promotionals.scss';
+// import './events-promotionals.scss';
 import Slider from 'react-slick';
 import cardBGBlack from './../../data/sliderbgblack.png';
-import Icon from '../Icon';
+import Icon from '../subcomponents/Icon';
 import ShareImg from './../../data/share_1.png';
 import ShareHoverImg from './../../data/share_2.png';
 
@@ -24,7 +24,7 @@ const PromotionalCard = (props:{img:string, title:string, details:string}, onRea
                 <h1>{props.title}</h1>
                 <hr/>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ...</p>
-                <Icon src={ShareImg} hover={ShareHoverImg} />
+                <Icon src={ShareImg} hoverSrc={ShareHoverImg} />
             </div>
         </div>
     );
@@ -74,18 +74,19 @@ const EventsNPromotions = ()=>{
         slidesToShow: 2,
         slidesToScroll: 1,
     };
-    return (
-        <div className='events-promotionals'>
-            <div id='events-promos-header'>
-                <h1>Special Events & Promotional</h1>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos.</p>
-            </div>
-            <Slider {...sliderSettings}>
-                {promoCards}
-            </Slider>
-        </div>
-    );
+    // return (
+    //     <div className='events-promotionals'>
+    //         <div id='events-promos-header'>
+    //             <h1>Special Events & Promotional</h1>
+    //             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
+    //                 tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos.</p>
+    //         </div>
+    //         <Slider {...sliderSettings}>
+    //             {promoCards}
+    //         </Slider>
+    //     </div>
+    // );
+    return null;
 };
 
 export default EventsNPromotions;
