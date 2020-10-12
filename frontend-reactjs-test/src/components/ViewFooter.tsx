@@ -8,13 +8,14 @@ import youtubeWhite from './../data/youtube_white.png';
 import linkedinWhite from './../data/linkedin_white.png';
 import twitterWhite from './../data/twitter_white.png';
 import langIcon from './../data/lang_icon.png';
+import { View, ViewContainer } from './subcomponents/View';
 
 
 export default class ViewFooter extends React.Component {
     render() {
         return  (
-            <div className='full-viewport view-container -text-white view-footer'>
-                <div className='view-content-container view-footer-container'>
+            <View className='view-footer'>
+                <ViewContainer className='-text-white view-footer-container'>
                     <div className='contact-logo'>
                         <img className='footer-gl-white-logo' src={lgWhiteLogo} alt='gl-logo' />
                         <h2> Follow Us</h2>
@@ -57,8 +58,8 @@ export default class ViewFooter extends React.Component {
                         <p>©2020 Gameloft. All rights reserved. Gameloft and the Gameloft logo are trademarks of Gameloft in the U.S. and/or other countries.<br/>
                             All other trademarks are the property of their respective owners.</p>
                     </div>
-                </div>
-            </div>
+                </ViewContainer>
+            </View>
         );
     }
 }

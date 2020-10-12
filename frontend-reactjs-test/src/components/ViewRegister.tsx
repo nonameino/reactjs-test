@@ -3,13 +3,15 @@ import React from 'react';
 import './../css/view-register.scss';
 
 import DecoratorImg from './../data/Decorator.png';
+import Button from './subcomponents/Button';
+import { View, ViewContainer } from './subcomponents/View';
 
 export default class ViewRegister extends React.Component {
     render() {
         return (
-            <div className='full-viewport view-container -text-blue view-register'>
+            <View className='view-register'>
                 <div className='full-parent view-register-bg' />
-                <div className='full-parent-width view-content-max-width view-content-container view-register-container'>
+                <ViewContainer className='view-register-container'>
                     <img src={DecoratorImg} alt='decorator' />
                     <form className='register-form'>
                         <h2 className='register-form-header'>Stay in the Know!</h2>
@@ -43,11 +45,11 @@ export default class ViewRegister extends React.Component {
                             <label>I agree to receive promotional offers relating to all Gameloft games and services.</label>
                         </div>
                         <div className='register-form-button-container'>
-                            <input type='submit' value='Button' id='submit'/>
+                            <Button>Button</Button>
                         </div>
                     </form>
-                </div>
-            </div>
+                </ViewContainer>
+            </View>
         );
     }
 }

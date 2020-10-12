@@ -8,6 +8,7 @@ import Slider from 'react-slick';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import $ from 'jquery';
 import EventCard from './subcomponents/EventCard';
+import { View, ViewContainer } from './subcomponents/View';
 
 export default class ViewEvents extends React.Component {
 
@@ -85,18 +86,20 @@ export default class ViewEvents extends React.Component {
         ));
 
         return (
-            <div className='full-viewport view-container -text-blue view-events'>
-                <div className='view-content-max-width view-content-container view-events-container'>
-                    <h1 className='view-events-header'>Special Events & Promotional</h1>
-                    <p className='view-event-description'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos.</p>
-                </div>
-                <div className='events-slider-container'>
-                    <Slider {...settings}>
-                        {eventCards}
-                    </Slider>
-                </div>
-            </div>
+            <View className='-text-blue view-events'>
+                <ViewContainer className='view-events-container'>
+                    <div className='view-event-title'>
+                        <h1 className='view-events-header'>Special Events & Promotional</h1>
+                        <p className='view-event-description'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos.</p>
+                    </div>
+                    <div className='events-slider-container'>
+                        <Slider {...settings}>
+                            {eventCards}
+                        </Slider>
+                    </div>
+                </ViewContainer>
+            </View>
         )
     }
 
