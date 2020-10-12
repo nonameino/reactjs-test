@@ -4,6 +4,7 @@ import './../../css/icon.scss';
 interface IconProps {
     src: string,
     hoverSrc: string,
+    style?:any,
 }
 
 interface IconState {
@@ -23,12 +24,24 @@ export default class Icon extends React.Component<IconProps,IconState> {
 
     render() {
         return (
-            <div className='icon-container' onMouseLeave={this.toggleHover} onMouseEnter={this.toggleHover}>
-                {this.state.hover ? <div className='icon-highlight-bg' /> : null}
-                <div className='icon-content'>
-                    <img className='icon-img' src={this.state.hover ? this.props.hoverSrc : this.props.src} alt='icon' />
+            <div style={this.props.style}>
+                <div className='icon-container' onMouseLeave={this.toggleHover} onMouseEnter={this.toggleHover}>
+                    {this.state.hover ? <div className='icon-highlight-bg' /> : null}
+                    <div className='icon-content'>
+                        <img className='icon-img' src={this.state.hover ? this.props.hoverSrc : this.props.src} alt='icon' />
+                    </div>
                 </div>
             </div>
         );
     }
 }
+
+// const Icon:any = styled.div`
+//     position: relative;
+//     background-color: transparent;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 40px;
+//     height: 40px;
+// `

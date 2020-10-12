@@ -22,15 +22,15 @@ export default class ViewRegister extends React.Component {
                         <input type='text' name='email' id='email' placeholder='Email' className='input-field'/>
                         <br/>
                         <select className='input-field' id='select-country'>
-                            <option disabled selected>Country</option>
-                            <option id='vn'>VietNam</option>
-                            <option id='jp'>Japan</option>
+                            <option disabled value='DEFAULT'>Country</option>
+                            <option id='vn' value='1'>VietNam</option>
+                            <option id='jp' value='2'>Japan</option>
                         </select>
                         <br/>
                         <select className='input-field' id='select-platform'>
-                            <option disabled selected>Platform</option>
-                            <option id='android'>Android</option>
-                            <option id='windows'>Windows</option>
+                            <option disabled  value='DEFAULT'>Platform</option>
+                            <option id='android' value='1'>Android</option>
+                            <option id='windows' value='2'>Windows</option>
                         </select>
                         <br/>
                         <br/>

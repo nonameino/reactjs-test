@@ -1,46 +1,18 @@
-import React from 'react';
+import styled from 'styled-components';
 
-interface ButtonState {
-    hover: boolean,
-}
+const Button:any = styled.button`
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    width: 300px;
+    height: 77px;
+    font-size: 21px;
+    font-weight: bold;
 
-interface ButtonProps {
-    onClick?: Function,
-    text?: string,
-}
-
-export default class Button extends React.Component<ButtonProps,ButtonState> {
-    constructor(props:ButtonProps) {
-        super(props);
-        this.state = {hover: false};
-        this.toggleHover = this.toggleHover.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+    :hover {
+        border: 2px solid #2699FB;
+        background-color: #2699FB;
     }
+`;
 
-    toggleHover() {
-        this.setState({hover: !this.state.hover});
-    }
-
-    handleClick(event:any) {
-        this.props.onClick && this.props.onClick.apply(event);
-    }
-
-    render() {
-        const styles = {
-            buttonStyle: {
-                border: `2px solid ${this.state.hover ? '#2699FB' : 'white'}`,
-                backgroundColor: `${this.state.hover ? '#2699FB' : 'white'}`,
-                color: 'white',
-                alignItems: 'center',
-            }
-        };
-        return (
-            <button onClick={this.handleClick} 
-                    style={styles.buttonStyle} 
-                    onMouseEnter={this.toggleHover} 
-                    onMouseLeave={this.toggleHover}>
-                {this.props.text}
-            </button>
-        )
-    }
-}
+export default Button;

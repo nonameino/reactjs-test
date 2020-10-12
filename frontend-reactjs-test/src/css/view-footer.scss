@@ -1,0 +1,61 @@
+@import './utils.scss';
+
+.view-footer {
+    background-color: #2699FB;
+    position: relative;
+    z-index: -1;
+}
+
+.view-footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-gl-white-logo {
+    position: relative;
+    left: -25px;
+}
+
+.contact-logo {
+    h2 {
+        font-size: $font-size-normal;
+    }
+}
+
+.social-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    img{
+        margin: 5px;
+    }
+}
+
+.contact-details {
+    h2 {
+        font-size: $font-size-normal;
+    };
+    p {
+        font-size: $font-size-m-normal;
+    }
+}
+
+.footer-language-box {
+    width: 145px;
+    height: 52px;
+    border: #2699FB solid 1px;
+    color: #2699FB;
+    border-radius: 3px 3px;
+    margin-bottom: 7px;
+}
+
+.footer-bottom-text {
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    margin-bottom: 20px;
+    p {
+        text-align: center;
+        font-size: $font-size-small;
+    }
+}

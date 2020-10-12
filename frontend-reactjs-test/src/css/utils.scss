@@ -39,7 +39,7 @@ $events-card-button-text-size: 21px;
 
 .full-viewport {
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 .full-parent {
@@ -69,7 +69,9 @@ $events-card-button-text-size: 21px;
 
 .view-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .view-content-container {

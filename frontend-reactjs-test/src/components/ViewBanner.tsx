@@ -32,7 +32,7 @@ export default class ViewBanner extends React.Component<any,ViewBannerState> {
         }
         const stars = [0,0,0,0,0]
                         .map((value, index)=>index<this.state.rateValue ? 1 : 0)
-                        .map(value=><img src={value === 1 ? starFullImg : starImg} alt='rate-star' />);
+                        .map((value, index)=><img key={index} src={value === 1 ? starFullImg : starImg} alt='rate-star' />);
         return (
             <div className='full-viewport -text-blue'>
                 <div className='full-parent-width view-container -text-white view-banner' style={styles.viewBannerBG}>
