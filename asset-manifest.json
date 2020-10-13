@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/reactjs-test/static/css/main.6a9f3708.chunk.css",
-    "main.js": "/reactjs-test/static/js/main.345f9d41.chunk.js",
-    "main.js.map": "/reactjs-test/static/js/main.345f9d41.chunk.js.map",
+    "main.css": "/reactjs-test/static/css/main.f20a24fc.chunk.css",
+    "main.js": "/reactjs-test/static/js/main.5cc4f4ff.chunk.js",
+    "main.js.map": "/reactjs-test/static/js/main.5cc4f4ff.chunk.js.map",
     "runtime-main.js": "/reactjs-test/static/js/runtime-main.6da9f528.js",
     "runtime-main.js.map": "/reactjs-test/static/js/runtime-main.6da9f528.js.map",
     "static/css/2.e452db76.chunk.css": "/reactjs-test/static/css/2.e452db76.chunk.css",
-    "static/js/2.139e7447.chunk.js": "/reactjs-test/static/js/2.139e7447.chunk.js",
-    "static/js/2.139e7447.chunk.js.map": "/reactjs-test/static/js/2.139e7447.chunk.js.map",
+    "static/js/2.3de1aa85.chunk.js": "/reactjs-test/static/js/2.3de1aa85.chunk.js",
+    "static/js/2.3de1aa85.chunk.js.map": "/reactjs-test/static/js/2.3de1aa85.chunk.js.map",
     "index.html": "/reactjs-test/index.html",
-    "precache-manifest.677c6dcc6dad54b29e2781241f3df344.js": "/reactjs-test/precache-manifest.677c6dcc6dad54b29e2781241f3df344.js",
+    "precache-manifest.ca0e99808ec72ed4bac40edb8eb6d7b0.js": "/reactjs-test/precache-manifest.ca0e99808ec72ed4bac40edb8eb6d7b0.js",
     "service-worker.js": "/reactjs-test/service-worker.js",
     "static/css/2.e452db76.chunk.css.map": "/reactjs-test/static/css/2.e452db76.chunk.css.map",
-    "static/css/main.6a9f3708.chunk.css.map": "/reactjs-test/static/css/main.6a9f3708.chunk.css.map",
-    "static/js/2.139e7447.chunk.js.LICENSE.txt": "/reactjs-test/static/js/2.139e7447.chunk.js.LICENSE.txt",
+    "static/css/main.f20a24fc.chunk.css.map": "/reactjs-test/static/css/main.f20a24fc.chunk.css.map",
+    "static/js/2.3de1aa85.chunk.js.LICENSE.txt": "/reactjs-test/static/js/2.3de1aa85.chunk.js.LICENSE.txt",
     "static/media/Decorator.png": "/reactjs-test/static/media/Decorator.2178fb0e.png",
     "static/media/slick-theme.scss": "/reactjs-test/static/media/slick.f97e3bbf.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6da9f528.js",
     "static/css/2.e452db76.chunk.css",
-    "static/js/2.139e7447.chunk.js",
-    "static/css/main.6a9f3708.chunk.css",
-    "static/js/main.345f9d41.chunk.js"
+    "static/js/2.3de1aa85.chunk.js",
+    "static/css/main.f20a24fc.chunk.css",
+    "static/js/main.5cc4f4ff.chunk.js"
   ]
 }
