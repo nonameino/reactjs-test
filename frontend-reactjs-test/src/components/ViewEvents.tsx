@@ -135,7 +135,7 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
         ));
 
         return (
-            <FullViewEvents>
+            <FullViewEvents className='view-events'>
                 <ViewContainer className='view-events-container'>
                     <div className='view-event-title'>
                         <h1 className='view-events-header'>Special Events & Promotional</h1>
