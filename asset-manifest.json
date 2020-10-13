@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/reactjs-test/static/css/main.f20a24fc.chunk.css",
+    "main.css": "/reactjs-test/static/css/main.ef6e4ea9.chunk.css",
     "main.js": "/reactjs-test/static/js/main.5cc4f4ff.chunk.js",
     "main.js.map": "/reactjs-test/static/js/main.5cc4f4ff.chunk.js.map",
     "runtime-main.js": "/reactjs-test/static/js/runtime-main.6da9f528.js",
@@ -9,10 +9,10 @@
     "static/js/2.3de1aa85.chunk.js": "/reactjs-test/static/js/2.3de1aa85.chunk.js",
     "static/js/2.3de1aa85.chunk.js.map": "/reactjs-test/static/js/2.3de1aa85.chunk.js.map",
     "index.html": "/reactjs-test/index.html",
-    "precache-manifest.ca0e99808ec72ed4bac40edb8eb6d7b0.js": "/reactjs-test/precache-manifest.ca0e99808ec72ed4bac40edb8eb6d7b0.js",
+    "precache-manifest.658f602a0f22b7815dca0cc8f2d54682.js": "/reactjs-test/precache-manifest.658f602a0f22b7815dca0cc8f2d54682.js",
     "service-worker.js": "/reactjs-test/service-worker.js",
     "static/css/2.e452db76.chunk.css.map": "/reactjs-test/static/css/2.e452db76.chunk.css.map",
-    "static/css/main.f20a24fc.chunk.css.map": "/reactjs-test/static/css/main.f20a24fc.chunk.css.map",
+    "static/css/main.ef6e4ea9.chunk.css.map": "/reactjs-test/static/css/main.ef6e4ea9.chunk.css.map",
     "static/js/2.3de1aa85.chunk.js.LICENSE.txt": "/reactjs-test/static/js/2.3de1aa85.chunk.js.LICENSE.txt",
     "static/media/Decorator.png": "/reactjs-test/static/media/Decorator.2178fb0e.png",
     "static/media/slick-theme.scss": "/reactjs-test/static/media/slick.f97e3bbf.svg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.6da9f528.js",
     "static/css/2.e452db76.chunk.css",
     "static/js/2.3de1aa85.chunk.js",
-    "static/css/main.f20a24fc.chunk.css",
+    "static/css/main.ef6e4ea9.chunk.css",
     "static/js/main.5cc4f4ff.chunk.js"
   ]
 }
