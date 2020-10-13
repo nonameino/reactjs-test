@@ -10,6 +10,13 @@ import $ from 'jquery';
 import EventCard from './subcomponents/EventCard';
 import { View, ViewContainer } from './subcomponents/View';
 import Global from '../Global';
+import styled from 'styled-components';
+
+const FullViewEvents = styled(View)`
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
 
 
 type ChangingProgressProviderState = {
@@ -71,7 +78,7 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
             // centerMode: true,
             slidesToShow: Global.isMobile() ? 1 : 3,
             slidesToScroll: 1,
-            spped: 300,
+            speed: 300,
             autoplay: true,
             autoplaySpeed: 3000,
             customPaging: (i:number)=>{
@@ -128,27 +135,27 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
         ));
 
         return (
-            <View className='-text-blue view-events'>
+            <FullViewEvents>
                 <ViewContainer className='view-events-container'>
                     <div className='view-event-title'>
                         <h1 className='view-events-header'>Special Events & Promotional</h1>
                         <p className='view-event-description'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
                             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos.</p>
                     </div>
-                    <div className='events-slider-container'>
-                        <Slider {...settings}>
-                            {eventCards}
-                        </Slider>
-                    </div>
                 </ViewContainer>
-            </View>
+                <div className='events-slider-container'>
+                    <Slider {...settings}>
+                        {eventCards}
+                    </Slider>
+                </div>
+            </FullViewEvents>
         )
     }
 
-    componentDidUpdate() {
-        $('.slick-track').css({
-            'top': 'auto',
-            'left': 'auto',
-        });
-    }
+    // componentDidUpdate() {
+    //     $('.slick-track').css({
+    //         'top': 'auto',
+    //         'left': 'auto',
+    //     });
+    // }
 };

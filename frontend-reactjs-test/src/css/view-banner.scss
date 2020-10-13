@@ -1,12 +1,5 @@
 @import './utils.scss';
 
-.view-banner {
-    // height: 100%;
-    // align-items: flex-end;
-    @media screen and (max-width: 768px) {
-        min-height: 870px;
-    }
-};
 
 .view-banner-container {
     color: white;
@@ -22,24 +15,33 @@
     .view-banner-content {
         width: 599px;
         min-width: inherit;
-        // margin-bottom: 125px;
-        @media screen and (max-width: 768px){
-            width: inherit;
+        .view-title-text {
+            font-size: 45px;
         }
+        .view-banner-rate-text {
+            font-size: 11px;
+        };
+        .view-banner-details-text {
+            font-size: 20px;
+            margin-bottom: 25px;
+        };
     };
-    .view-banner-rate-text {
-        font-size: $font-size-m-small;
-    };
-    .view-banner-details-text {
-        font-size: $font-size-m-normal;
-        margin-bottom: 50px;
-    };
+    @media screen and (max-width: 768px) {
+        width: auto;
+        .view-banner-content{
+            width: inherit;
+            margin: 15px;
+            .view-banner-details-text {
+                font-size: 12px;
+            };
+        };
+    }
 };
 
 .view-market {
     display: block;
     background-color: #D8EDFF;
-    position: absolute;
+    // position: absolute;
     left: 0;
     bottom: 0;
 }

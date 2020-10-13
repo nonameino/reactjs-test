@@ -6,6 +6,15 @@ import btnNitendoIng from './../data/button_nitendo.png';
 import btnMicrosoftIng from './../data/button_microsoft.png';
 import btnSteamIng from './../data/button_steam.png';
 import {View, ViewContainer} from './subcomponents/View';
+import styled from 'styled-components';
+
+const FullViewBanner:any = styled(View)`
+    flex-direction: column;
+    justify-content: flex-end;
+    @media screen and (max-width: 768px) {
+        min-height: 870px;
+    }
+`
 
 interface ViewBannerState {
     gameName: string,
@@ -30,7 +39,7 @@ export default class ViewBanner extends React.Component<any,ViewBannerState> {
                         .map((value, index)=>index<this.state.rateValue ? 1 : 0)
                         .map((value, index)=><img key={index} src={value === 1 ? starFullImg : starImg} alt='rate-star' />);
         return (
-            <View className='view-banner'>
+            <FullViewBanner>
             {/* <div className='full-viewport -text-blue'> */}
                 <ViewContainer className='view-banner-container'>
                     <img className='banner full-parent' src={process.env.PUBLIC_URL + this.state.banner} alt='banner' />
@@ -43,19 +52,19 @@ export default class ViewBanner extends React.Component<any,ViewBannerState> {
                         <p className="view-banner-details-text">{this.state.decription}</p>
                         <br/>
                     </div>
-                    <div className='full-parent-width view-container -text-blue view-market'>
-                        <ViewContainer className='view-market-container'>
-                            <h3 className='download-text'>Download latest version</h3>
-                            <div className='market-group'>
-                                <img id='btnNitendo' src={btnNitendoIng} alt='btnNitendo' />
-                                <img id='btnMicrosoft' src={btnMicrosoftIng} alt='btnMicrosoft' />
-                                <img id='btnSteam' src={btnSteamIng} alt='btnSteam' />
-                            </div>
-                        </ViewContainer>
-                    </div>
                 </ViewContainer>
+                <div className='full-parent-width view-container -text-blue view-market'>
+                    <ViewContainer className='view-market-container'>
+                        <h3 className='download-text'>Download latest version</h3>
+                        <div className='market-group'>
+                            <img id='btnNitendo' src={btnNitendoIng} alt='btnNitendo' />
+                            <img id='btnMicrosoft' src={btnMicrosoftIng} alt='btnMicrosoft' />
+                            <img id='btnSteam' src={btnSteamIng} alt='btnSteam' />
+                        </div>
+                    </ViewContainer>
+                </div>
             {/* </div> */}
-            </View>
+            </FullViewBanner>
         )
     }
 }

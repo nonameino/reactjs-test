@@ -8,6 +8,7 @@ import { ViewStickyBottom, ViewStickyTop } from './components/ViewSticky';
 import ReactPageScroller from 'react-page-scroller/lib';
 
 import './css/utils.scss';
+import Global from './Global';
 
 // function App() {
 //   return (
@@ -36,14 +37,23 @@ class App extends React.Component<any,{currentPage:any}> {
     return (
       <div className='App'>
         <React.Fragment>
-        <ViewStickyTop />
-          <ReactPageScroller pageOnChange={this.handlePageChange}
+          <ViewStickyTop />
+          {!Global.isMobile()
+          ? (<ReactPageScroller pageOnChange={this.handlePageChange}
                               customPageNumber={this.state.currentPage}>
-            <ViewBanner />
-            <ViewRegister />
-            <ViewEvents />
-            <ViewFooter />
-          </ReactPageScroller>
+              <ViewBanner />
+              <ViewRegister />
+              <ViewEvents />
+              <ViewFooter />
+            </ReactPageScroller>)
+          : (
+            <>
+              <ViewBanner />
+              <ViewRegister />
+              <ViewEvents />
+              <ViewFooter />
+            </>
+          )}
           <ViewStickyBottom />
         </React.Fragment>
       </div>
