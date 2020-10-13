@@ -23,11 +23,12 @@
     align-items: center;
     padding-left: 80px;
     padding-right: 80px;
-}
 
-.decorator-img {
     @media screen and (max-width: 768px) {
-        display: none;
+        justify-content: center;
+        .decorator-img {
+            display: none;
+        }
     }
 }
 

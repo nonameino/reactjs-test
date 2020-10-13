@@ -1,5 +1,39 @@
 import React from 'react';
-import './../../css/icon.scss';
+import styled from 'styled-components';
+
+const IconContainer = styled.div`
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    /* :hover {
+        background-color: #DDD;
+    } */
+`;
+
+const IconContent = styled.div`
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+`;
+
+const IconHighlight = styled.div`
+    position: absolute;
+    background-color: white;
+    opacity: 0.36;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+`;
 
 interface IconProps {
     src: string,
@@ -25,16 +59,18 @@ export default class Icon extends React.Component<IconProps,IconState> {
     render() {
         return (
             <div style={this.props.style}>
-                <div className='icon-container' onMouseLeave={this.toggleHover} onMouseEnter={this.toggleHover}>
-                    {this.state.hover ? <div className='icon-highlight-bg' /> : null}
-                    <div className='icon-content'>
+                <IconContainer onMouseLeave={this.toggleHover} onMouseEnter={this.toggleHover}>
+                    {this.state.hover ? <IconHighlight /> : null}
+                    <IconContent>
                         <img className='icon-img' src={this.state.hover ? this.props.hoverSrc : this.props.src} alt='icon' />
-                    </div>
-                </div>
+                    </IconContent>
+                </IconContainer>
             </div>
         );
     }
 }
+
+
 
 // const Icon:any = styled.div`
 //     position: relative;

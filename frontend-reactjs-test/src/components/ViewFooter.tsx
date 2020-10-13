@@ -27,18 +27,25 @@ export default class ViewFooter extends React.Component {
     render() {
         return  (
             <FullViewFooter className='view-footer'>
-                <ViewContainer className='-text-white view-footer-container'>
-                    {Global.isMobile() 
-                    ? (<div className='social-group'>
-                            <h2> Follow Us</h2>
-                            <div className='social-icons'>
-                                <img src={fbBlue} alt='fb-logo' />
-                                <img src={linkedinBlue} alt='linkedin-logo' />
-                                <img src={twitterBlue} alt='twitter-logo' />
-                                <img src={youtubeBlue} alt='youtube-logo' />
+                {Global.isMobile() 
+                ? (
+                    <div className='full-parent-width view-container -text-blue view-follow'>
+                        <ViewContainer>
+                            <div className='social-group'>
+                                <h2> Follow Us</h2>
+                                <div className='social-icons'>
+                                    <img src={fbBlue} alt='fb-logo' />
+                                    <img src={linkedinBlue} alt='linkedin-logo' />
+                                    <img src={twitterBlue} alt='twitter-logo' />
+                                    <img src={youtubeBlue} alt='youtube-logo' />
+                                </div>
                             </div>
-                        </div>)
-                    : null}
+                        </ViewContainer>
+                    </div>
+                )
+                : null}
+                <ViewContainer className='-text-white view-footer-container'>
+                    
                     <div className='contact-logo'>
                         <img className='footer-gl-white-logo' src={lgWhiteLogo} alt='gl-logo' />
                         {!Global.isMobile()

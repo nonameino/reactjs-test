@@ -18,9 +18,9 @@ export const View:any = styled.div`
 export const ViewContainer:any = styled.div`
     width: 100%;
     max-width: 1028px;
-    @media (max-width: 768px) {
-        width: auto;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+    padding-left: 20px;
+    padding-right: 20px;
+    /* @media (max-width: 768px) { */
+        /* width: auto; */
+    /* } */
 `;

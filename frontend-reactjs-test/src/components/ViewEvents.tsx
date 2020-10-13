@@ -53,6 +53,14 @@ class ChangingProgressProvider extends React.Component<ChangingProgressProviderP
 
 export default class ViewEvents extends React.Component<any,{activeCircleIndex:number}> {
 
+    refObj:React.RefObject<any>;
+ 
+    constructor(props:any) {
+        super(props);
+
+        this.refObj = React.createRef();
+    }
+
     state = {
         activeCircleIndex: 0,
     };
@@ -62,8 +70,8 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
     // activeSlide:number = 0;
     // listCircleProgresses: Map<number,any> = new Map();
 
-    shouldComponentUpdate(newProps:any, newState:any) {
-        return true;
+    componentWillUpdate() {
+        // this.container
     }
 
     render() {
@@ -79,8 +87,8 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
             slidesToShow: Global.isMobile() ? 1 : 3,
             slidesToScroll: 1,
             speed: 300,
-            autoplay: true,
-            autoplaySpeed: 3000,
+            // autoplay: true,
+            // autoplaySpeed: 3000,
             customPaging: (i:number)=>{
                 return (<ChangingProgressProvider values={this.state.activeCircleIndex === i ? [0, 100] : [0]}>
                     {percentage=>(
@@ -130,12 +138,18 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
             },
         ];
 
+        // const parentWidth = this.refObj.current.offsetWidth;
+        // const carWidth = Math.round(parentWidth/settings.slidesToShow);
+
         const eventCards = cardsDetails.map((cardDetails, index)=>(
-            <EventCard key={index} url={process.env.PUBLIC_URL + cardDetails.url} shortTitle={cardDetails.title} description={cardDetails.description} />
+            <EventCard key={index} 
+                        url={process.env.PUBLIC_URL + cardDetails.url} 
+                        shortTitle={cardDetails.title} 
+                        description={cardDetails.description} />
         ));
 
         return (
-            <FullViewEvents className='view-events'>
+            <FullViewEvents ref={this.refObj} className='view-events'>
                 <ViewContainer className='view-events-container'>
                     <div className='view-event-title'>
                         <h1 className='view-events-header'>Special Events & Promotional</h1>

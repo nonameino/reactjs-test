@@ -13,6 +13,7 @@ interface EventCardProps {
     url?: string,
     shortTitle?: string,
     description?: string,
+    cardWidth?:number,
 }
 
 export default class EventCard extends React.Component<EventCardProps, EventCardState> {
