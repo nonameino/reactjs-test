@@ -9,6 +9,7 @@ import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import $ from 'jquery';
 import EventCard from './subcomponents/EventCard';
 import { View, ViewContainer } from './subcomponents/View';
+import Global from '../Global';
 
 
 type ChangingProgressProviderState = {
@@ -63,12 +64,12 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
         // let percent = this.counter/3000;
 
         // console.log(this.counter + "|" + percent);
-
+        
         const settings = {
             infinite: true,
             dots: true,
             // centerMode: true,
-            slidesToShow: 3,
+            slidesToShow: Global.isMobile() ? 1 : 3,
             slidesToScroll: 1,
             spped: 300,
             autoplay: true,

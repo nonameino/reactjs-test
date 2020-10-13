@@ -12,7 +12,7 @@ export default class ViewRegister extends React.Component {
             <View className='view-register'>
                 <div className='full-parent view-register-bg' />
                 <ViewContainer className='view-register-container'>
-                    <img src={DecoratorImg} alt='decorator' />
+                    <img className='decorator-img' src={DecoratorImg} alt='decorator' />
                     <form className='register-form'>
                         <h2 className='register-form-header'>Stay in the Know!</h2>
                         <p className='register-form-details'>

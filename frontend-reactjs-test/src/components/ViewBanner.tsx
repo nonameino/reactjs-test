@@ -33,7 +33,7 @@ export default class ViewBanner extends React.Component<any,ViewBannerState> {
             <View className='view-banner'>
             {/* <div className='full-viewport -text-blue'> */}
                 <ViewContainer className='view-banner-container'>
-                    <img className='banner full-viewport' src={process.env.PUBLIC_URL + this.state.banner} alt='banner' />
+                    <img className='banner full-parent' src={process.env.PUBLIC_URL + this.state.banner} alt='banner' />
                     <div className='view-banner-content'>
                         <h1 className='view-title-text'>{this.state.gameName}</h1>
                         <div className='rate-container'>

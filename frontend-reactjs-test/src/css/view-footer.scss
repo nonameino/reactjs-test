@@ -11,6 +11,10 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 150px;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 .footer-gl-white-logo {
@@ -19,16 +23,31 @@
 }
 
 .contact-logo {
-    h2 {
-        font-size: $font-size-normal;
-    }
+    
 }
 
 .social-group {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    img{
-        margin: 5px;
+    h2 {
+        font-size: $font-size-normal;
+    }
+    .social-icons {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        img{
+            margin: 5px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #C4E4FF;
+        color: #2699FB;
     }
 }
 
@@ -39,6 +58,19 @@
     p {
         font-size: $font-size-m-normal;
     }
+    @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        h2 {
+            display: none;
+        }
+        p {
+            font-size: $form-input-text-size;
+            font-weight: bold;
+            margin: 5px;
+        }
+    }
 }
 
 .footer-language-box {
@@ -48,6 +80,9 @@
     color: #2699FB;
     border-radius: 3px 3px;
     margin-bottom: 7px;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 }
 
 .footer-bottom-text {
@@ -58,5 +93,10 @@
     p {
         text-align: center;
         font-size: $font-size-small;
+    }
+    @media screen and (max-width: 768px) {
+        p{
+            font-size: $font-size-s-small;
+        }
     }
 }

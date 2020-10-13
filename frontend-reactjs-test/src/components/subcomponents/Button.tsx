@@ -13,6 +13,11 @@ const Button:any = styled.button`
         border: 2px solid #2699FB;
         background-color: #2699FB;
     }
+
+    @media screen and (max-width: 768px) {
+        border: 2px solid #2699FB;;
+        color: #2699FB;;
+    }
 `;
 
 export default Button;

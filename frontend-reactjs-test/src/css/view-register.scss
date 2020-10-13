@@ -25,6 +25,12 @@
     padding-right: 80px;
 }
 
+.decorator-img {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
 .register-form {
     width: 250px;
 }

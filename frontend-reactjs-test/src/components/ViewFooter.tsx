@@ -18,12 +18,14 @@ export default class ViewFooter extends React.Component {
                 <ViewContainer className='-text-white view-footer-container'>
                     <div className='contact-logo'>
                         <img className='footer-gl-white-logo' src={lgWhiteLogo} alt='gl-logo' />
-                        <h2> Follow Us</h2>
                         <div className='social-group'>
-                            <img src={fbWhite} alt='fb-logo' />
-                            <img src={linkedinWhite} alt='linkedin-logo' />
-                            <img src={twitterWhite} alt='twitter-logo' />
-                            <img src={youtubeWhite} alt='youtube-logo' />
+                            <h2> Follow Us</h2>
+                            <div className='social-icons'>
+                                <img src={fbWhite} alt='fb-logo' />
+                                <img src={linkedinWhite} alt='linkedin-logo' />
+                                <img src={twitterWhite} alt='twitter-logo' />
+                                <img src={youtubeWhite} alt='youtube-logo' />
+                            </div>
                         </div>
                         <select className='footer-language-box' id='select-platform'>
                             <option id='English' value='DEFAULT'>
@@ -34,25 +36,29 @@ export default class ViewFooter extends React.Component {
                         </select>
                     </div>
                     <div className='contact-details'>
-                        <h2>VISIT</h2>
-                        <br/>
-                        <p>Gameloft Games</p>
-                        <p>Gameloft Careers</p>
-                        <p>Gameloft News</p>
-                        <p>Gameloft Forum</p>
-                        <p>Gameloft Corporate</p>
-                        <p>Gameloft Advertising</p>
-                        <p>Gameloft Support</p>
-                        <br/>
-                        <h2>LEGAL</h2>
-                        <br/>
-                        <p>Term of Use</p>
-                        <p>Privacy Policy</p>
-                        <p>Cookies Policy</p>
-                        <p>EULA</p>
-                        <p>Legal Notices</p>
-                        <p>Event Rules</p>
-                        <p>Business Contacts</p>
+                        <div className='contact-details-visit'>
+                            <h2>VISIT</h2>
+                            <br/>
+                            <p>Gameloft Games</p>
+                            <p>Gameloft Careers</p>
+                            <p>Gameloft News</p>
+                            <p>Gameloft Forum</p>
+                            <p>Gameloft Corporate</p>
+                            <p>Gameloft Advertising</p>
+                            <p>Gameloft Support</p>
+                            <br/>
+                        </div>
+                        <div className='contact-details-legal'>
+                            <h2>LEGAL</h2>
+                            <br/>
+                            <p>Term of Use</p>
+                            <p>Privacy Policy</p>
+                            <p>Cookies Policy</p>
+                            <p>EULA</p>
+                            <p>Legal Notices</p>
+                            <p>Event Rules</p>
+                            <p>Business Contacts</p>
+                        </div>
                     </div>
                     <div className='footer-bottom-text'>
                         <p>©2020 Gameloft. All rights reserved. Gameloft and the Gameloft logo are trademarks of Gameloft in the U.S. and/or other countries.<br/>
