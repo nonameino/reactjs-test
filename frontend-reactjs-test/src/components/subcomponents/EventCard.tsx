@@ -4,6 +4,60 @@ import Button from './Button';
 import Icon from './Icon';
 import ShareImg from '../../data/share_1.png';
 import ShareImgHover from '../../data/share_2.png';
+import styled from 'styled-components';
+
+const CardContent = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    h2 {
+        width: 247px;
+        font-size: 35px;
+    }
+    hr {
+        width: 78px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .button-bound {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 20px 20px 35px 20px;
+        button {
+            margin-top: 50px;
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+    }
+    
+    :hover {
+        justify-content: flex-start;
+    }
+
+    @media screen and (max-width: 768px) {
+        h2 {
+            width: 148px;
+            font-size: 21px;
+        }
+        p {
+            font-size: 10px;
+        }
+        .button-bound {
+            button {
+                height: 50px;
+                font-size: 12px;
+            }
+        }
+    }
+`;
 
 interface EventCardState {
     hover: boolean,
@@ -14,6 +68,8 @@ interface EventCardProps {
     shortTitle?: string,
     description?: string,
     cardWidth?:number,
+    width: number,
+    height: number,
 }
 
 export default class EventCard extends React.Component<EventCardProps, EventCardState> {
@@ -31,11 +87,19 @@ export default class EventCard extends React.Component<EventCardProps, EventCard
 
     render() {
         const styles = {
+            bound: {
+                display: 'flex',
+                // flexDirection: 'column' as 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                height: '100%',
+            },
             container: {
                 position: 'relative' as 'relative',
                 // backgroundImage: `url(${this.props.url})`,
-                width: this.state.hover ? '437' : '401px',
-                height: this.state.hover ? '599px' : '531px',
+                width: this.state.hover ? this.props.width * 1.05 : this.props.width,
+                height: this.state.hover ? this.props.height * 1.05 : this.props.height,
                 color: 'white',
             },
             bg: {
@@ -56,33 +120,6 @@ export default class EventCard extends React.Component<EventCardProps, EventCard
                 padding: '25px',
                 height: '100%',
             },
-            shortTitleBottom: {
-                position: 'absolute' as 'absolute',
-                width: '247px',
-                fontSize: '35px',
-                marginLeft: '25px',
-                marginBottom: '20px',
-                left: '0',
-                bottom: '0',
-            },
-            shortTitleTop: {
-                position: 'relative' as 'relative',
-                width: '247px',
-                fontSize: '35px',
-                left: '0',
-                top: '0',
-            },
-            hrSize : {
-                width: '78px',
-                marginTop: '10px',
-                marginBottom: '10px',
-            },
-            button: {
-                position: 'absolute' as 'absolute',
-                width: '354px',
-                left: '25px',
-                bottom: '50px',
-            },
             icon: {
                 position: 'absolute' as 'absolute',
                 right: '25px',
@@ -90,19 +127,25 @@ export default class EventCard extends React.Component<EventCardProps, EventCard
             }
         }
         return (
-            <div style={styles.container} onMouseEnter={this.triggerHover} onMouseLeave={this.triggerHover}>
-                <img src={this.props.url} alt='bg' style={styles.bg} />
-                <img src={BG} alt='bg-black' style={styles.blackBg}/>
-                <div style={styles.content}>
-                    <h2 style={this.state.hover ? styles.shortTitleTop : styles.shortTitleBottom}>{this.props.shortTitle}</h2>
-                    {this.state.hover ? (
-                        <>
-                            <hr style={styles.hrSize} />
-                            <p>{this.props.description}</p>
-                            <Button style={styles.button}>READ MORE</Button>
-                            <Icon style={styles.icon} src={ShareImg} hoverSrc={ShareImgHover} />
-                        </>
-                    ) : null}
+            <div style={styles.bound}>
+                <div style={styles.container} 
+                    onMouseEnter={this.triggerHover} 
+                    onMouseLeave={this.triggerHover}>
+                    <img src={this.props.url} alt='bg' style={styles.bg} />
+                    <img src={BG} alt='bg-black' style={styles.blackBg}/>
+                    <CardContent>
+                        <h2>{this.props.shortTitle}</h2>
+                        {this.state.hover ? (
+                            <>
+                                <hr/>
+                                <p>{this.props.description}</p>
+                                <div className='button-bound'>
+                                    <Button>READ MORE</Button>
+                                </div>
+                                <Icon style={styles.icon} src={ShareImg} hoverSrc={ShareImgHover} />
+                            </>
+                        ) : null}
+                    </CardContent>
                 </div>
             </div>
         );

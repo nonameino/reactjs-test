@@ -6,11 +6,21 @@ import 'react-circular-progressbar/dist/styles.css';
 
 import Slider from 'react-slick';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
-import $ from 'jquery';
 import EventCard from './subcomponents/EventCard';
 import { View, ViewContainer } from './subcomponents/View';
 import Global from '../Global';
 import styled from 'styled-components';
+
+const cardSizes = {
+    windows: {
+        width: 401,
+        height: 531,
+    },
+    mobile: {
+        width: 280,
+        height: 385,
+    }
+};
 
 const FullViewEvents = styled(View)`
     flex-direction: column;
@@ -51,44 +61,52 @@ class ChangingProgressProvider extends React.Component<ChangingProgressProviderP
     }
 }
 
-export default class ViewEvents extends React.Component<any,{activeCircleIndex:number}> {
+interface ViewEventsState {
+    activeCircleIndex: number;
+    cardWidth: number;
+    cardHeight: number;
+    numCardCanShow: number;
+}
 
-    refObj:React.RefObject<any>;
- 
+export default class ViewEvents extends React.Component<any,ViewEventsState> {
+
     constructor(props:any) {
         super(props);
 
-        this.refObj = React.createRef();
+        this.state = {
+            activeCircleIndex: 0,
+            cardWidth: 0,
+            cardHeight: 0,
+            numCardCanShow: 5,
+        };
     }
 
-    state = {
-        activeCircleIndex: 0,
-    };
+    componentDidMount() {
+        let cardWidth = Global.isMobile() ? cardSizes.mobile.width : cardSizes.windows.width;
+        let cardHeight = Global.isMobile() ? cardSizes.mobile.height : cardSizes.windows.height;
 
-    // counter:number = 0;
-    // startTime:number = Date.now();
-    // activeSlide:number = 0;
-    // listCircleProgresses: Map<number,any> = new Map();
+        let numCardCanShow = Math.floor((window.innerWidth - 30) / cardWidth);
+        if (numCardCanShow >=5)
+            numCardCanShow = 4;
+        console.log("num of card[" + (window.innerWidth - 30) + "," + cardWidth + "]: " + numCardCanShow);
 
-    componentWillUpdate() {
-        // this.container
+        this.setState({
+            cardWidth: cardWidth,
+            cardHeight: cardHeight,
+            numCardCanShow: numCardCanShow,
+        })
     }
 
     render() {
-        // this.counter = Date.now() - this.startTime;
-        // let percent = this.counter/3000;
-
-        // console.log(this.counter + "|" + percent);
-        
         const settings = {
             infinite: true,
             dots: true,
-            // centerMode: true,
-            slidesToShow: Global.isMobile() ? 1 : 3,
+            centerMode: true,
+            slidesToShow: this.state.numCardCanShow,
             slidesToScroll: 1,
             speed: 300,
-            // autoplay: true,
-            // autoplaySpeed: 3000,
+            autoplay: true,
+            autoplaySpeed: 3000,
             customPaging: (i:number)=>{
                 return (<ChangingProgressProvider values={this.state.activeCircleIndex === i ? [0, 100] : [0]}>
                     {percentage=>(
@@ -99,13 +117,9 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
                 </ChangingProgressProvider>);
             },
             beforeChange: (current:number, next:number) =>{
-                // console.log('beforeChange:' + current + "|" + next);
-                // this.listCircleProgresses.get(current).setActived(false);
                 // this.setState({activeCircleIndex: next});
             },
             afterChange: (current:number) =>{
-                // console.log('afterChange:' + current);
-                // this.listCircleProgresses.get(current).current.setActived(true);
                 this.setState({activeCircleIndex: current});
             },
         }
@@ -138,18 +152,17 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
             },
         ];
 
-        // const parentWidth = this.refObj.current.offsetWidth;
-        // const carWidth = Math.round(parentWidth/settings.slidesToShow);
-
         const eventCards = cardsDetails.map((cardDetails, index)=>(
-            <EventCard key={index} 
+            <EventCard  width={this.state.cardWidth}
+                        height={this.state.cardHeight}
+                        key={index} 
                         url={process.env.PUBLIC_URL + cardDetails.url} 
                         shortTitle={cardDetails.title} 
                         description={cardDetails.description} />
         ));
 
         return (
-            <FullViewEvents ref={this.refObj} className='view-events'>
+            <FullViewEvents className='view-events'>
                 <ViewContainer className='view-events-container'>
                     <div className='view-event-title'>
                         <h1 className='view-events-header'>Special Events & Promotional</h1>
@@ -165,11 +178,4 @@ export default class ViewEvents extends React.Component<any,{activeCircleIndex:n
             </FullViewEvents>
         )
     }
-
-    // componentDidUpdate() {
-    //     $('.slick-track').css({
-    //         'top': 'auto',
-    //         'left': 'auto',
-    //     });
-    // }
 };
