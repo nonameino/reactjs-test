@@ -7,7 +7,7 @@ import fbWhite from './../data/facebook_white.png';
 import youtubeWhite from './../data/youtube_white.png';
 import linkedinWhite from './../data/linkedin_white.png';
 import twitterWhite from './../data/twitter_white.png';
-import langIcon from './../data/lang_icon.png';
+// import langIcon from './../data/lang_icon.png';
 import { View, ViewContainer } from './subcomponents/View';
 
 

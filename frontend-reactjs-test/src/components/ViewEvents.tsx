@@ -5,26 +5,64 @@ import 'slick-carousel/slick/slick-theme.scss';
 import 'react-circular-progressbar/dist/styles.css';
 
 import Slider from 'react-slick';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import $ from 'jquery';
 import EventCard from './subcomponents/EventCard';
 import { View, ViewContainer } from './subcomponents/View';
 
-export default class ViewEvents extends React.Component {
 
-    counter:number = 0;
-    startTime:number = Date.now();
-    activeSlide:number = 0;
+type ChangingProgressProviderState = {
+    valuesIndex: number;
+}
+
+type ChangingProgressProviderProps = {
+    values: number[];
+    interval: number;
+    children: (value: number) => React.ReactNode;
+}
+
+class ChangingProgressProvider extends React.Component<ChangingProgressProviderProps,ChangingProgressProviderState> {
+    static defaultProps = {
+        interval: 3000,
+    }
+
+    state = {
+        valuesIndex: 0,
+    }
+
+    componentDidMount() {
+        setInterval(()=>{
+            this.setState({
+                valuesIndex: (this.state.valuesIndex + 1) % this.props.values.length,
+            });
+        }, this.props.interval)
+    }
+
+    render() {
+        return this.props.children(this.props.values[this.state.valuesIndex]);
+    }
+}
+
+export default class ViewEvents extends React.Component<any,{activeCircleIndex:number}> {
+
+    state = {
+        activeCircleIndex: 0,
+    };
+
+    // counter:number = 0;
+    // startTime:number = Date.now();
+    // activeSlide:number = 0;
+    // listCircleProgresses: Map<number,any> = new Map();
 
     shouldComponentUpdate(newProps:any, newState:any) {
         return true;
     }
 
     render() {
-        this.counter = Date.now() - this.startTime;
-        let percent = this.counter/3000;
+        // this.counter = Date.now() - this.startTime;
+        // let percent = this.counter/3000;
 
-        console.log(this.counter + "|" + percent);
+        // console.log(this.counter + "|" + percent);
 
         const settings = {
             infinite: true,
@@ -35,21 +73,24 @@ export default class ViewEvents extends React.Component {
             spped: 300,
             autoplay: true,
             autoplaySpeed: 3000,
-            customPaging: (i:any) => (
-                <div>
-                    {
-                        this.activeSlide === i 
-                        ? <CircularProgressbar value={percent} maxValue={1} text={(i+1).toString().padStart(2)} />
-                        : <CircularProgressbar value={0.0} maxValue={1} text={(i+1).toString().padStart(2)} />
-                    }
-                </div>
-            ),
-            beforeChange: (current:number, next:number) =>{},
+            customPaging: (i:number)=>{
+                return (<ChangingProgressProvider values={this.state.activeCircleIndex === i ? [0, 100] : [0]}>
+                    {percentage=>(
+                        <CircularProgressbar value={percentage}
+                                            text={(i+1).toString().padStart(2)}
+                                            styles={buildStyles({pathTransition: percentage === 0 ? "none" : "stroke-dashoffset 0.5s ease 0s"})}/>
+                    )}
+                </ChangingProgressProvider>);
+            },
+            beforeChange: (current:number, next:number) =>{
+                // console.log('beforeChange:' + current + "|" + next);
+                // this.listCircleProgresses.get(current).setActived(false);
+                // this.setState({activeCircleIndex: next});
+            },
             afterChange: (current:number) =>{
-                this.activeSlide = current;
-                this.startTime = Date.now();
-                this.counter = 0;
-                console.log("after change: " + this.activeSlide);
+                // console.log('afterChange:' + current);
+                // this.listCircleProgresses.get(current).current.setActived(true);
+                this.setState({activeCircleIndex: current});
             },
         }
 
@@ -82,7 +123,7 @@ export default class ViewEvents extends React.Component {
         ];
 
         const eventCards = cardsDetails.map((cardDetails, index)=>(
-            <EventCard key={index} url={cardDetails.url} shortTitle={cardDetails.title} description={cardDetails.description} />
+            <EventCard key={index} url={process.env.PUBLIC_URL + cardDetails.url} shortTitle={cardDetails.title} description={cardDetails.description} />
         ));
 
         return (

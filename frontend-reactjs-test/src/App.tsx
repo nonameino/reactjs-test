@@ -5,20 +5,50 @@ import ViewEvents from './components/ViewEvents';
 import ViewFooter from './components/ViewFooter';
 import ViewRegister from './components/ViewRegister';
 import { ViewStickyBottom, ViewStickyTop } from './components/ViewSticky';
+import ReactPageScroller from 'react-page-scroller/lib';
 
 import './css/utils.scss';
 
-function App() {
-  return (
-    <div className='App'>
-      <ViewStickyTop />
-      <ViewBanner />
-      <ViewRegister />
-      <ViewEvents />
-      <ViewFooter />
-      <ViewStickyBottom />
-    </div>
-  );
+// function App() {
+//   return (
+//     <div className='App'>
+//       <ViewStickyTop />
+//       <ViewBanner />
+//       <ViewRegister />
+//       <ViewEvents />
+//       <ViewFooter />
+//       <ViewStickyBottom />
+//     </div>
+//   );
+// }
+
+class App extends React.Component<any,{currentPage:any}> {
+  constructor(props:any) {
+    super(props);
+    this.state = {currentPage:null};
+  }
+
+  handlePageChange = (number:number)=>{
+    this.setState({currentPage:number});
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <React.Fragment>
+        <ViewStickyTop />
+          <ReactPageScroller pageOnChange={this.handlePageChange}
+                              customPageNumber={this.state.currentPage}>
+            <ViewBanner />
+            <ViewRegister />
+            <ViewEvents />
+            <ViewFooter />
+          </ReactPageScroller>
+          <ViewStickyBottom />
+        </React.Fragment>
+      </div>
+    );
+  }
 }
 
 export default App;
