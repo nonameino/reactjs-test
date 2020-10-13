@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/reactjs-test/static/css/main.fd9e75a4.chunk.css",
-    "main.js": "/reactjs-test/static/js/main.05365f3f.chunk.js",
-    "main.js.map": "/reactjs-test/static/js/main.05365f3f.chunk.js.map",
+    "main.css": "/reactjs-test/static/css/main.6f0dfcbb.chunk.css",
+    "main.js": "/reactjs-test/static/js/main.74eb7d07.chunk.js",
+    "main.js.map": "/reactjs-test/static/js/main.74eb7d07.chunk.js.map",
     "runtime-main.js": "/reactjs-test/static/js/runtime-main.6da9f528.js",
     "runtime-main.js.map": "/reactjs-test/static/js/runtime-main.6da9f528.js.map",
-    "static/js/2.beed5458.chunk.js": "/reactjs-test/static/js/2.beed5458.chunk.js",
-    "static/js/2.beed5458.chunk.js.map": "/reactjs-test/static/js/2.beed5458.chunk.js.map",
+    "static/css/2.066667de.chunk.css": "/reactjs-test/static/css/2.066667de.chunk.css",
+    "static/js/2.139e7447.chunk.js": "/reactjs-test/static/js/2.139e7447.chunk.js",
+    "static/js/2.139e7447.chunk.js.map": "/reactjs-test/static/js/2.139e7447.chunk.js.map",
     "index.html": "/reactjs-test/index.html",
-    "precache-manifest.79086a2dadbf49623302972402feb3cf.js": "/reactjs-test/precache-manifest.79086a2dadbf49623302972402feb3cf.js",
+    "precache-manifest.5373bb6a41b60245a3f3875f0fa3fbaf.js": "/reactjs-test/precache-manifest.5373bb6a41b60245a3f3875f0fa3fbaf.js",
     "service-worker.js": "/reactjs-test/service-worker.js",
-    "static/css/main.fd9e75a4.chunk.css.map": "/reactjs-test/static/css/main.fd9e75a4.chunk.css.map",
-    "static/js/2.beed5458.chunk.js.LICENSE.txt": "/reactjs-test/static/js/2.beed5458.chunk.js.LICENSE.txt",
-    "static/media/Decorator.png": "/reactjs-test/static/media/Decorator.2178fb0e.png"
+    "static/css/2.066667de.chunk.css.map": "/reactjs-test/static/css/2.066667de.chunk.css.map",
+    "static/css/main.6f0dfcbb.chunk.css.map": "/reactjs-test/static/css/main.6f0dfcbb.chunk.css.map",
+    "static/js/2.139e7447.chunk.js.LICENSE.txt": "/reactjs-test/static/js/2.139e7447.chunk.js.LICENSE.txt",
+    "static/media/Decorator.png": "/reactjs-test/static/media/Decorator.2178fb0e.png",
+    "static/media/slick-theme.scss": "/reactjs-test/static/media/slick.f97e3bbf.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6da9f528.js",
-    "static/js/2.beed5458.chunk.js",
-    "static/css/main.fd9e75a4.chunk.css",
-    "static/js/main.05365f3f.chunk.js"
+    "static/css/2.066667de.chunk.css",
+    "static/js/2.139e7447.chunk.js",
+    "static/css/main.6f0dfcbb.chunk.css",
+    "static/js/main.74eb7d07.chunk.js"
   ]
 }
