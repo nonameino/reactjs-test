@@ -1,0 +1,51 @@
+@import './utils.scss';
+
+.view-sticky {
+    
+    background: transparent;
+}
+
+.sticky {
+    position: fixed;
+    z-index: 100;
+    @media screen and (max-width: 768px) {
+        -webkit-backface-visibility: hidden;
+    }
+}
+
+.-top {
+    top: 0;
+    background-color: #2699FB;
+}
+
+.-bottom {
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.sticky-top-bg {
+   background-color: white;
+   opacity: 0.6;
+   position: absolute;
+   z-index: -1;
+}
+
+.sticky-top-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sticky-bottom-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}

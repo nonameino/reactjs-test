@@ -1,0 +1,79 @@
+@import './utils.scss';
+
+
+.view-banner-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .banner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    };
+    .view-banner-content {
+        width: 599px;
+        min-width: inherit;
+        .view-title-text {
+            font-size: 45px;
+        }
+        .view-banner-rate-text {
+            font-size: 11px;
+        };
+        .view-banner-details-text {
+            font-size: 20px;
+            margin-bottom: 25px;
+        };
+    };
+    @media screen and (max-width: 768px) {
+        width: auto;
+        .view-banner-content{
+            width: inherit;
+            margin: 15px;
+            .view-banner-details-text {
+                font-size: 12px;
+            };
+        };
+    }
+};
+
+.view-market {
+    display: block;
+    background-color: #D8EDFF;
+    // position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.download-text {
+    font-size: $font-size-m-normal;
+}
+
+.view-market-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.market-group {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px) {
+        flex-flow: row wrap;
+    }
+}
+
+.market-group img {
+    margin: 5px;
+}

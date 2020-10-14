@@ -1,0 +1,79 @@
+@import './utils.scss';
+
+.view-register{
+    // position: static;
+    // background-color: #D8EDFF;
+}
+
+.view-register-bg{
+    position: absolute;
+    background-color: #D8EDFF;
+    opacity: 0.51;
+    // top: 0;
+    // left: 0;
+    width: inherit;
+    height: inherit;
+    z-index: -1;
+}
+
+.view-register-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    @media screen and (max-width: 768px) {
+        justify-content: center;
+        .decorator-img {
+            display: none;
+        }
+    }
+}
+
+.register-form {
+    width: 250px;
+}
+
+.input-field {
+    width: 100%;
+    border: #2699FB solid 1px;
+    color: #2699FB;
+    border-radius: 3px 3px;
+    margin-bottom: 7px;
+    height: 30px;
+}
+
+.input-field::placeholder {
+    color: #2699FB;
+    font-size: $form-input-text-size;
+}
+
+.register-form-checkbox-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.register-form-checkbox-group label {
+    margin-left: 10px;
+    font-size: $form-check-box-lable-text-size;
+}
+
+.register-form-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.register-form-button-container button {
+    background-color: transparent;
+    // color: #2699FB;
+    // border: 1px solid #2699FB;
+    border-radius: 3px 3px;
+    width: 100px;
+    height: 30px;
+    margin: 10px auto;
+    vertical-align: middle;
+    font-size: $form-button-text-size;
+}

@@ -1,0 +1,107 @@
+@import './utils.scss';
+
+.view-footer {
+    background-color: #2699FB;
+    position: relative;
+    z-index: -1;
+}
+
+.view-follow {
+    background-color: #C4E4FF;
+    color: #2699FB;
+}
+
+.social-group {
+    h2 {
+        margin-top: 15px;
+        font-size: $font-size-normal;
+    }
+    .social-icons {
+        margin: 15px;
+        img{
+            margin: 5px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+.view-footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 150px;
+
+    .footer-language-box {
+        width: 145px;
+        height: 52px;
+        border: #2699FB solid 1px;
+        color: #2699FB;
+        border-radius: 3px 3px;
+        margin-bottom: 7px;
+    }
+
+    .contact-details {
+        h2 {
+            font-size: $font-size-normal;
+        };
+        p {
+            font-size: $font-size-m-normal;
+        }
+    }
+
+    .footer-bottom-text {
+        position: absolute;
+        bottom: 0;
+        align-items: center;
+        margin-bottom: 20px;
+        p {
+            text-align: center;
+            font-size: 15pxl;
+        }
+        @media screen and (max-width: 768px) {
+            
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: unset;
+        flex-direction: column;
+        // justify-content: end;
+        .footer-gl-white-logo {
+            width: 300px;
+            height: 100px;
+        }
+        .footer-language-box {
+            display: none;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            h2 {
+                display: none;
+            }
+            p {
+                font-size: $form-input-text-size;
+                font-weight: bold;
+                margin: 10px;
+            }
+        }
+        .footer-bottom-text {
+            // margin-bottom: 45px;
+            position: relative;
+            margin-top: 45px;
+            p{
+                font-size: 10px;
+            }
+        }
+    }
+}
