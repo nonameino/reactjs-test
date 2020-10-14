@@ -85,9 +85,11 @@ export default class ViewEvents extends React.Component<any,ViewEventsState> {
         let cardWidth = Global.isMobile() ? cardSizes.mobile.width : cardSizes.windows.width;
         let cardHeight = Global.isMobile() ? cardSizes.mobile.height : cardSizes.windows.height;
 
-        let numCardCanShow = Math.floor((window.innerWidth - 30) / cardWidth);
+        let numCardCanShow = Math.floor((window.innerWidth - 50) / cardWidth);
         if (numCardCanShow >=5)
-            numCardCanShow = 4;
+            numCardCanShow = 5;
+        if (!Global.isMobile())
+            numCardCanShow -= 1;
         console.log("num of card[" + (window.innerWidth - 30) + "," + cardWidth + "]: " + numCardCanShow);
 
         this.setState({
